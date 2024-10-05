@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness & Sports for Wellness</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 45px;
+            margin: 0;
+            letter-spacing: 1.5px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content */
+        section {
+            text-align: center;
+            margin: 40px 20px;
+        }
+
+        section h2 {
+            font-size: 35px;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        section .quote {
+            font-style: italic;
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        /* Images and content styling */
+        .img-placeholder {
+            background-color: #e0e0e0;
+            width: 300px;
+            height: 200px;
+            display: inline-block;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden; /* Hide overflow for the slideshow */
+        }
+
+        .slides {
+            width: 100%;
+            height: auto;
+            display: none; /* Hide all images by default */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fitness & Sports for Wellness</h1>
+        <nav>
+            <a href="fitness.html">Fitness and Exercises</a>
+            <a href="meal.html">Meal Plans</a>
+            <a href="sports.html">Sports</a>
+            <a href="s&w.html">Safety and Well-being</a>
+            <a href="comp.html">Competitions</a>
+            <a href="progress.html">Progress</a>
+        </nav>
+    </header>
+      
+    <section id="Sports">
+        <h2></h2>
+        <p>"Boost your agility, strength, and endurance with dynamic sports activities that challenge your limits and elevate your performance."</p>
+        <p class="quote">"Sports is the journey of the self, through perseverance, to excellence."</p>
+        <div class="img-placeholder">
+            <img class="slides" src="img4.jpg" alt="img1" style="display: block;">
+            <img class="slides" src="img5.jpg" alt="img2">
+            <img class="slides" src="cric.jpg" alt="img3">
+        </div>
+    </section>
+
+    <section id="yoga">
+        <h2>Yoga & Flexibility</h2>
+        <p>Enhance your flexibility, focus, and balance with rejuvenating yoga poses.</p>
+        <p class="quote">"Yoga is the journey of the self, through the self, to the self." — The Bhagavad Gita</p>
+        <div class="img-placeholder">
+            <img class="slides" src="img1.jpg" alt="img1" style="display: block;">
+            <img class="slides" src="img2.jpg" alt="img2">
+            <img class="slides" src="img3.jpg" alt="img3">
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <p>© 2024 Fitness & Sports for Wellness | Follow us on 
+            <a href="https://twitter.com" target="_blank">Twitter</a>, 
+            <a href="https://facebook.com" target="_blank">Facebook</a>, 
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // Hide all slides
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1; // Reset index if it exceeds the number of slides
+            }
+            slides[slideIndex - 1].style.display = "block"; // Show the current slide
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+
+        showSlides(); // Start the slideshow
+    </script>
+</body>
+</html>

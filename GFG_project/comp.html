@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness and Sports Competitions in India</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8; /* Soft light blue background */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50; /* Darker green for the heading */
+            margin-top: 20px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .competition-list {
+            margin: 50px auto;
+            width: 60%; /* Wider for better spacing */
+            text-align: left;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #ffffff; /* White background for the list */
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .competition-list:hover {
+            transform: scale(1.02); /* Slight scale effect on hover */
+        }
+        .competition-item {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #4CAF50; /* Green for borders */
+            border-radius: 5px;
+            background-color: #e8f5e9; /* Light green for items */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .competition-item:hover {
+            background-color: #c8e6c9; /* Darker light green on hover */
+            transform: translateY(-2px); /* Lift effect */
+        }
+        .competition-info {
+            display: none; /* Initially hidden */
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 10px;
+            background-color: #f9f9f9; /* Light gray for info box */
+            transition: max-height 0.3s ease-in-out;
+            overflow: hidden;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 15px;
+            background-color: #4CAF50; /* Darker green footer */
+            color: white;
+            position: relative;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Top Fitness and Sports Competitions in India</h1>
+
+    <div class="competition-list">
+        <div class="competition-item" onclick="toggleInfo('info1')">1. Mumbai Marathon</div>
+        <div id="info1" class="competition-info">
+            <p>The Mumbai Marathon is an annual marathon held in Mumbai, typically in January. It features various categories, including a full marathon, half marathon, and a 5K run.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info2')">2. IPL (Indian Premier League)</div>
+        <div id="info2" class="competition-info">
+            <p>The Indian Premier League is a professional Twenty20 cricket league in India, typically held between March and May. It features teams representing different cities.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info3')">3. Pro Kabaddi League</div>
+        <div id="info3" class="competition-info">
+            <p>The Pro Kabaddi League is a men's professional Kabaddi league in India, which features teams from various regions, held every year since 2014.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info4')">4. Federation Cup (Athletics)</div>
+        <div id="info4" class="competition-info">
+            <p>The Federation Cup is an annual athletics competition held in India, featuring various track and field events. It is a key event for athletes to qualify for national competitions.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info5')">5. National Games of India</div>
+        <div id="info5" class="competition-info">
+            <p>The National Games are multi-sport events held every two years in India. It brings together athletes from various states to compete across a range of sports.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info6')">6. Chennai Open</div>
+        <div id="info6" class="competition-info">
+            <p>The Chennai Open is a professional tennis tournament held annually in Chennai. It is part of the ATP Tour and attracts many international players.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info7')">7. Delhi Half Marathon</div>
+        <div id="info7" class="competition-info">
+            <p>The Delhi Half Marathon is an annual road race held in Delhi, typically in November. It includes various distances, promoting fitness and health awareness.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info8')">8. Ironman India</div>
+        <div id="info8" class="competition-info">
+            <p>The Ironman India is a triathlon competition featuring a 3.8 km swim, 180 km bike ride, and a 42.2 km marathon. It tests the limits of endurance.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info9')">9. Khiladi of the Year</div>
+        <div id="info9" class="competition-info">
+            <p>Khiladi of the Year is a unique sports competition featuring various challenges and games across different sports disciplines in India.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info10')">10. Pogo Amazing Kids Awards</div>
+        <div id="info10" class="competition-info">
+            <p>The Pogo Amazing Kids Awards celebrate children excelling in various sports, recognizing their achievements and promoting youth sports participation.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info11')">11. All India University Games</div>
+        <div id="info11" class="competition-info">
+            <p>The All India University Games are organized for university-level athletes across various sports, promoting competition and excellence among students.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info12')">12. National Youth Games</div>
+        <div id="info12" class="competition-info">
+            <p>The National Youth Games are held to promote sports among youth in India, providing a platform for young athletes to showcase their talents.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info13')">13. Surjit Hockey Tournament</div>
+        <div id="info13" class="competition-info">
+            <p>The Surjit Hockey Tournament is an annual hockey competition held in India, featuring various teams competing for the championship.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info14')">14. Inter-School Sports Competitions</div>
+        <div id="info14" class="competition-info">
+            <p>These competitions are organized annually at various levels for school students, promoting sportsmanship and physical fitness.</p>
+        </div>
+
+        <div class="competition-item" onclick="toggleInfo('info15')">15. Tata Mumbai Marathon</div>
+        <div id="info15" class="competition-info">
+            <p>The Tata Mumbai Marathon is one of the largest marathons in India, attracting thousands of participants every year and promoting health and fitness.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sports and Fitness Events</p>
+    </footer>
+
+    <script>
+        function toggleInfo(infoId) {
+            const infoBox = document.getElementById(infoId);
+            const allInfoBoxes = document.querySelectorAll('.competition-info');
+            
+            // Close other info boxes
+            allInfoBoxes.forEach(box => {
+                if (box !== infoBox) {
+                    box.style.display = 'none';
+                }
+            });
+
+            // Toggle the clicked info box
+            if (infoBox.style.display === 'block') {
+                infoBox.style.display = 'none';
+            } else {
+                infoBox.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

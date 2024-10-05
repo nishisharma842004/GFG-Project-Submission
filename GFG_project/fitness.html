@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Exercises</title>
+    <style>
+        /* General page styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container that holds everything */
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Heading style */
+        h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: #28a745;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0px 5px 15px rgba(40, 167, 69, 0.5);
+            margin-bottom: 20px;
+        }
+
+        /* List styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /* Individual list item styling */
+        ul li {
+            font-size: 20px;
+            margin: 12px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Highlighted text within each list item */
+        .highlight {
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Hidden image container */
+        .image-content {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+
+        /* Start/Stop button styling */
+        .start-btn, .stop-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .stop-btn {
+            background-color: #dc3545;
+        }
+
+        .start-btn:hover {
+            background-color: #218838;
+        }
+
+        .stop-btn:hover {
+            background-color: #c82333;
+        }
+
+        /* Timer display styling */
+        .timer {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            ul li {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fitness Exercises</h1>
+        <ul>
+            <li>
+                <span class="highlight" onclick="toggleImage('image1')">Build muscle strength &#9662;</span>
+                <div class="image-content" id="image1">
+                    <img src="BMS.jpeg" alt="Build muscle strength">
+                </div>
+                <div class="timer" id="timer1">00:00</div>
+                <button class="start-btn" onclick="startTimer(1)">Start</button>
+                <button class="stop-btn" onclick="stopTimer(1)">Stop</button>
+            </li>
+            <li>
+                <span class="highlight" onclick="toggleImage('image2')">Slim down your face &#9662;</span>
+                <div class="image-content" id="image2">
+                    <img src="SLY.jpeg" alt="Slim down your face">
+                </div>
+                <div class="timer" id="timer2">00:00</div>
+                <button class="start-btn" onclick="startTimer(2)">Start</button>
+                <button class="stop-btn" onclick="stopTimer(2)">Stop</button>
+            </li>
+            <li>
+                <span class="highlight" onclick="toggleImage('image3')">Get rid of excess body fat &#9662;</span>
+                <div class="image-content" id="image3">
+                    <img src="GRE.jpeg" alt="Get rid of excess body fat">
+                </div>
+                <div class="timer" id="timer3">00:00</div>
+                <button class="start-btn" onclick="startTimer(3)">Start</button>
+                <button class="stop-btn" onclick="stopTimer(3)">Stop</button>
+            </li>
+            <li>
+                <span class="highlight" onclick="toggleImage('image4')">Get rid of double chin &#9662;</span>
+                <div class="image-content" id="image4">
+                    <img src="CHCH.jpeg" alt="Get rid of double chin">
+                </div>
+                <div class="timer" id="timer4">00:00</div>
+                <button class="start-btn" onclick="startTimer(4)">Start</button>
+                <button class="stop-btn" onclick="stopTimer(4)">Stop</button>
+            </li>
+            <li>
+                <span class="highlight" onclick="toggleImage('image5')">Full body workout &#9662;</span>
+                <div class="image-content" id="image5">
+                    <img src="FBW.jpeg" alt="Full body workout">
+                </div>
+                <div class="timer" id="timer5">00:00</div>
+                <button class="start-btn" onclick="startTimer(5)">Start</button>
+                <button class="stop-btn" onclick="stopTimer(5)">Stop</button>
+            </li>
+            <li>
+                <span class="highlight" onclick="toggleImage('image6')">Abs &#9662;</span>
+                <div class="image-content" id="image6">
+                    <img src="ABS.jpeg" alt="Abs">
+                </div>
+                <div class="timer" id="timer6">00:00</div>
+                <button class="start-btn" onclick="startTimer(6)">Start</button>
+                <button class="stop-btn" onclick="stopTimer(6)">Stop</button>
+            </li>
+            <li>
+                <span class="highlight" onclick="toggleImage('image7')">Legs &#9662;</span>
+                <div class="image-content" id="image7">
+                    <img src="LEGS.jpeg" alt="Legs">
+                </div>
+                <div class="timer" id="timer7">00:00</div>
+                <button class="start-btn" onclick="startTimer(7)">Start</button>
+                <button class="stop-btn" onclick="stopTimer(7)">Stop</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleImage(imageId) {
+            const image = document.getElementById(imageId);
+            const otherImages = document.querySelectorAll('.image-content');
+            
+            otherImages.forEach(img => {
+                if (img !== image) {
+                    img.style.display = 'none';
+                }
+            });
+
+            if (image.style.display === 'block') {
+                image.style.display = 'none';
+            } else {
+                image.style.display = 'block';
+            }
+        }
+
+        // Timer functions (same as before)
+        let timers = {};
+
+        function startTimer(index) {
+            if (!timers[index]) {
+                timers[index] = { startTime: Date.now(), intervalId: null };
+            }
+
+            if (!timers[index].intervalId) {
+                timers[index].intervalId = setInterval(() => {
+                    const elapsedTime = Date.now() - timers[index].startTime;
+                    const minutes = Math.floor(elapsedTime / 60000);
+                    const seconds = Math.floor((elapsedTime % 60000) / 1000);
+                    document.getElementById('timer' + index).textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }, 1000);
+            }
+        }
+
+        function stopTimer(index) {
+            if (timers[index] && timers[index].intervalId) {
+                clearInterval(timers[index].intervalId);
+                timers[index].intervalId = null;
+            }
+        }
+    </script>
+</body>
+</html>

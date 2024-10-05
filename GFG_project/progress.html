@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 30px; /* Align text vertically */
+            color: white;
+            transition: width 0.3s ease;
+        }
+        .track-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .progress-info {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="track-title">Progress Tracker</div>
+    
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar">0%</div>
+    </div>
+
+    <div class="progress-info" id="progressInfo">Current Progress: 0%</div>
+
+    <button onclick="increaseProgress()">Increase Progress</button>
+
+    <script>
+        let progress = 0;
+
+        function increaseProgress() {
+            if (progress < 100) {
+                progress += 10; // Increase by 10%
+                updateProgress();
+            }
+        }
+
+        function updateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progressInfo = document.getElementById('progressInfo');
+            progressBar.style.width = progress + '%';
+            progressBar.innerHTML = progress + '%';
+            progressInfo.innerHTML = 'Current Progress: ' + progress + '%';
+        }
+    </script>
+
+</body>
+</html>

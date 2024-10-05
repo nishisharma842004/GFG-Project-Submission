@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-top: 50px;
+        }
+        .sports-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .sports-list {
+            margin: 20px;
+        }
+        .sports-list a {
+            display: block;
+            margin: 15px;
+            padding: 10px 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            background-color: #ffffff;
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .sports-list a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .sport-details {
+            display: none;
+            text-align: left;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #4CAF50;
+            background-color: #fff;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .sport-details h2 {
+            color: #4CAF50;
+        }
+        .sport-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .sport-text {
+            width: 60%;
+            padding: 20px;
+        }
+        .sport-image img {
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sports</h1>
+
+    <div class="sports-container">
+        <div class="sports-list">
+            <a href="#cricket" onclick="showDetails('cricket')">Cricket</a>
+            <a href="#basketball" onclick="showDetails('basketball')">Basketball</a>
+            <a href="#tennis" onclick="showDetails('tennis')">Lawn Tennis</a>
+        </div>
+        <div class="sports-list">
+            <a href="#football" onclick="showDetails('football')">Football</a>
+            <a href="#tabletennis" onclick="showDetails('tabletennis')">Table Tennis</a>
+            <a href="#badminton" onclick="showDetails('badminton')">Badminton</a>
+        </div>
+    </div>
+
+    <div id="cricket" class="sport-details">
+        <h2>Cricket</h2>
+        <div class="sport-content">
+            <div class="sport-text">
+                <p>Cricket is a bat-and-ball game played between two teams of eleven players on a field at the center of which is a 22-yard pitch with a wicket at each end, each comprising two bails balanced on three stumps.</p>
+            </div>
+            <div class="sport-image">
+                <img src="cric.jpg" alt="Cricket">
+            </div>
+        </div>
+    </div>
+
+    <div id="basketball" class="sport-details">
+        <h2>Basketball</h2>
+        <div class="sport-content">
+            <div class="sport-text">
+                <p>Basketball is a team sport where two teams, most commonly of five players each, oppose one another on a rectangular court, competing with the primary objective of shooting a basketball through the opponent's hoop.</p>
+            </div>
+            <div class="sport-image">
+                <img src="bb.jpg" alt="Basketball">
+            </div>
+        </div>
+    </div>
+
+    <div id="tennis" class="sport-details">
+        <h2>Lawn Tennis</h2>
+        <div class="sport-content">
+            <div class="sport-text">
+                <p>Lawn Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles).</p>
+            </div>
+            <div class="sport-image">
+                <img src="lont.jpg" alt="Lawn Tennis">
+            </div>
+        </div>
+    </div>
+
+    <div id="football" class="sport-details">
+        <h2>Football</h2>
+        <div class="sport-content">
+            <div class="sport-text">
+                <p>Football, also known as soccer, is a team sport played between two teams of eleven players with a spherical ball. It is played by approximately 250 million players in over 200 countries and dependencies.</p>
+            </div>
+            <div class="sport-image">
+                <img src="fb.jpg" alt="Football">
+            </div>
+        </div>
+    </div>
+
+    <div id="tabletennis" class="sport-details">
+        <h2>Table Tennis</h2>
+        <div class="sport-content">
+            <div class="sport-text">
+                <p>Table Tennis, also known as ping-pong, is a sport in which two or four players hit a lightweight ball, also known as the ping-pong ball, back and forth across a table using small rackets.</p>
+            </div>
+            <div class="sport-image">
+                <img src="tt.jpg" alt="Table Tennis">
+            </div>
+        </div>
+    </div>
+
+    <div id="badminton" class="sport-details">
+        <h2>Badminton</h2>
+        <div class="sport-content">
+            <div class="sport-text">
+                <p>Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of the game are "singles" (with one player per side) and "doubles" (with two players per side).</p>
+            </div>
+            <div class="sport-image">
+                <img src="bdt.jpg" alt="Badminton">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sports Hub</p>
+    </footer>
+
+    <script>
+        function showDetails(sport) {
+            const sections = document.querySelectorAll('.sport-details');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sport).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

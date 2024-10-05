@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga & Sports - Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #4caf50;
+        }
+        .login-container input[type="text"], 
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .login-container a {
+            display: block;
+            margin-top: 15px;
+            color: #333;
+            text-decoration: none;
+        }
+        #error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js"></script>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB26P4f9RTGILvMQPF5QfNZznuvjRlwbcc",
+            authDomain: "progress-tractor.firebaseapp.com",
+            projectId: "progress-tractor",
+            storageBucket: "progress-tractor.appspot.com",
+            messagingSenderId: "848689410512",
+            appId: "1:848689410512:web:fa3a9b7d4fa8431650c9d5",
+            measurementId: "G-ZCEV40QSX4"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const email = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            // Firebase authentication
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Redirect to fitness & sports main page after successful login
+                    window.location.href = "fitness.html"; 
+                })
+                .catch((error) => {
+                    // Display error message
+                    errorMessage.textContent = "Error: " + error.message;
+                });
+        }
+    </script>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="handleLogin(event)">
+            <input type="text" id="username" name="username" placeholder="Enter Email" required><br>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required><br>
+            <input type="submit" value="Login">
+        </form>
+        <a href="#">Forgot Password?</a>
+        <div id="error-message"></div>
+    </div>
+
+</body>
+</html>
